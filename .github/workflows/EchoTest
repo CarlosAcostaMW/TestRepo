@@ -1,0 +1,17 @@
+name: Second Workflow - Validate Trigger
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: "Message triggered by first workflow"
+        required: true
+        type: string
+
+jobs:
+  validate-trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo message from first workflow
+        run: |
+          echo "The first workflow triggered this with the message: ${{ github.event.inputs.message }}"
