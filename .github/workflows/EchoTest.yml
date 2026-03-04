@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Echo message from first workflow
         run: |
-          echo "The first workflow triggered this with the message: ${{ github.event.client_payload.message }}"
+          echo "The first workflow dispatched this workflow with the following payload:"
           echo "Event type: ${{ github.event.event_type }}"
           echo "Caller repository: ${{ github.event.client_payload.caller_repo }}"
           echo "Action ID: ${{ github.event.client_payload.action_id }}"
